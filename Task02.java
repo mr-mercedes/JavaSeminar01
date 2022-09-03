@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 public class Task02 {
     public static void main(String[] args) {
-        String[] array = {"aabb", "aabbb", "aaabb"};
+        String[] array = {"aaabb", "aabbb", "aaabb"};
 
         System.out.print("In array " + Arrays.toString(array));
         System.out.println(" longest prefix = " + getPrefix(array));
@@ -21,7 +21,7 @@ public class Task02 {
         for (int i = 0; i < array.length; i++) {
             String tmp = array[i];
             StringBuilder builder = new StringBuilder(String.valueOf(tmp.charAt(0)));
-            for (int j = 0; j < tmp.length() - 1; j++) {
+            for (int j = 1; j < tmp.length() - 1; j++) {
                 if (tmp.charAt(0) == tmp.charAt(j)) {
                     builder.append(tmp.charAt(0));
                 }
