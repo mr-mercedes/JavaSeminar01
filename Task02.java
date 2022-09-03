@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 public class Task02 {
     public static void main(String[] args) {
-        String[] array = {"abb", "aabbb", "aaabb", "aaaabbb", "aaabb"};
+        String[] array = {"aabb", "aabbb", "aaabb"};
 
         System.out.print("In array " + Arrays.toString(array));
         System.out.println(" longest prefix = " + getPrefix(array));
@@ -20,7 +20,7 @@ public class Task02 {
         String[] stringArray = new String[array.length];
         for (int i = 0; i < array.length; i++) {
             String tmp = array[i];
-            StringBuilder builder = new StringBuilder(tmp.charAt(0));
+            StringBuilder builder = new StringBuilder(String.valueOf(tmp.charAt(0)));
             for (int j = 0; j < tmp.length() - 1; j++) {
                 if (tmp.charAt(0) == tmp.charAt(j)) {
                     builder.append(tmp.charAt(0));
@@ -31,8 +31,6 @@ public class Task02 {
         }
 
         return longestPrefix(stringArray);
-
-
     }
 
     private static String longestPrefix(String[] stringArray) {
