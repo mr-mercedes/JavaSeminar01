@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 public class Task02 {
     public static void main(String[] args) {
-        String[] array = {"abb", "aabbb", "aaabb", "aaaabbb"};
+        String[] array = {"abb", "aabbb", "aaabb", "aaaabbb", "aaabb"};
 
         System.out.print("In array " + Arrays.toString(array));
         System.out.println(" longest prefix = " + getPrefix(array));
@@ -43,7 +43,7 @@ public class Task02 {
                     count++;
                 }
             }
-            if (count >= stringArray.length / 2) {
+            if (count >= (stringArray.length - count) / 2) {
                 return stringArray[i];
             }
             count = 1;
